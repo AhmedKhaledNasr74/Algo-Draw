@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algo Draw | sorting</title>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Algo Draw</div>   
+            <div>
+                <div class="algoBar">
+                    <div class="algoDiv" >
+                        <div>Algorithms</div>
+                        <span></span>
+                    </div>
+                    <ul class="all-algos">
+                        <li class="bubble algo active">Bubble</li>
+                        <li class="insertion algo">Insertion</li>
+                        <li class="quick algo">Quick</li>
+                        <li class="merge algo">Merge</li>
+                    </ul>
+                </div>
+                
+                
+            </div>
+            
+            <div class="controls">
+                <div class="aa">
+                    <div class="name">Controls</div>
+                    <span class="arrow"></span>
+                </div>
+                
+                
+                <ul class="menu">
+                    <li><button class="random btn">Random Array</button></li>
+                    <li><button class="addBtn btn">Enter an Array</button></li>
+                    <div>Array Size</div>
+                    <input type="range" class="range arraySize" id="size" min="10" max="200" value="0">
+                    <div>Speed</div>
+                    <input type="range" class="range speed" min="1" max="350" id="speed" value="10">
+                </ul>
+            </div>
+            <div>
+                <button class="submitBtn btn">Run</button>
+            </div>
+            
+        </div>
+    </header>
+    <div class="main-algo">
+        <div class="container">
+            <div class="arr">
+            </div>
+        </div>
+    </div>
+    <div class="inputArr disable">
+        <div class="main">
+            <div class="warning disable"></div>
+            <textarea class="input"></textarea>
+            <button class="submitInput">Add</button>
+        </div>
+        
+    </div>
+    <script type="module"  async src="js/main.js"></script>
+</body>
+</html>

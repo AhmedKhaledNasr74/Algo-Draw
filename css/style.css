@@ -1,0 +1,346 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+:root{
+    --main-color:#65bbca;
+    --second-color:#1d1d1d;
+    --myWhite:#f3f3f3;
+    --main-transition:0.3s;
+}
+body {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #1d1d1d;
+
+}
+
+header{
+    min-width: 100vw;
+    width: max-content;
+    background-color: var(--main-color);
+    -webkit-box-shadow: 9px 6px 93px -17px rgba(2,48,71,1);
+    -moz-box-shadow: 9px 6px 93px -17px rgba(2,48,71,1);
+    box-shadow: 9px 6px 93px -17px rgba(2,48,71,1);
+}
+.container{
+    width:90%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.container .logo{
+    padding: 1rem;
+    font-size: x-large;
+    font-weight:900;
+    color: var(--second-color);
+}
+
+
+.all-algos{
+    position: relative;
+    display: flex;
+    list-style: none;
+    font-size: large;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #f3f3f3;
+
+}
+.all-algos li{
+    padding: 1rem;
+    transition: var(--main-transition) ease all;
+    cursor: pointer;
+}
+
+.all-algos li:hover{
+    background-color: #85bbcf;
+}
+
+.algoBar .algoDiv{
+    display: flex;
+    align-items: center;
+}
+
+.active{
+    background-color: #85bbcf;
+}
+.name{
+    cursor: pointer;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    
+}
+.controls:hover {
+    color: var(--second-color);
+}
+
+.controls:hover .arrow{
+    border-color: var(--second-color) transparent transparent transparent; 
+}
+
+.controls{
+    align-items: center;
+    position: relative;
+    padding-left: 2rem;
+    font-size: large;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: var(--myWhite);
+    text-align: center;
+    display: flex;
+}
+
+.controls li{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0.5rem;
+    height: fit-content;
+    background-color: var(--second-color);
+    border: solid 2px var(--myWhite);
+    color: var(--myWhite);
+    font-size: large;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.aa{
+    display: flex;
+    align-items: center;
+}
+
+span{
+    margin-top: 12px;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+    border-width: 7px 7px 7px 7px;
+}
+
+
+
+.menu{
+    list-style: none;
+    position: absolute;
+    top: 1.5rem;
+    z-index: 100;
+    left: -1.5rem;
+    padding: 10px;
+    background-color: var(--main-color);
+    display: none;
+}
+
+.controls:hover .menu{
+    display: block;
+}
+
+input[type="range"]{
+    -webkit-appearance: none;
+    outline: none;
+    background: var(--myWhite);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    opacity: 0.8;
+    transition: all ease 0.2s;
+    width: 100%;
+}
+.range:hover{
+    opacity: 1;
+    filter: brightness(1.2);
+}
+
+.range::-webkit-slider-thumb{
+    height: 1rem;
+    width: 1rem;
+    outline: none;
+    background: var(--myWhite);
+    border-radius: 50%;
+    border: 3px solid var(--second-color);
+    -webkit-appearance: none;
+    background: white;
+    box-shadow: -210px 0 0 200px var(--second-color);
+}
+
+.btn{
+    height: fit-content;
+    background-color: var(--second-color);
+    border: none;
+    color: var(--myWhite);
+    font-size: large;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.submitBtn{
+    border: 2px solid var(--myWhite);
+    width: 6rem;
+    background-color: #10b186;
+    margin-right: 0.3rem;
+}
+.random{
+    width: 9rem;
+}
+/*---------------------------------------------------------------------------------------------------------------------------------------*/
+
+.main-algo{
+    
+    height: 43rem;
+    padding: 1.5px;
+    display: flex;
+}
+
+.arr{
+    margin-left: auto;
+    margin-right: auto ;
+    display: flex;
+}
+/*@media (min-width: 1285px) {
+    .arr{
+        width: 1200px;
+    }
+    
+}*/
+
+.bar{
+    background-color: #53f3f3;
+    margin-left: 1px;
+}
+
+/*---------------------------------------------------------------------------------------------------------------------------------------*/
+
+.inputArr{
+    background-color: #000000ac;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: flex;
+}
+
+.main{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input{
+    width: 25rem;
+    height: 5rem;
+    outline: 3px solid var(--main-color);
+    border-radius: 2px;
+}
+
+.submitInput{
+    display: block;
+    margin: auto;
+    margin-top: 1.5rem;
+    width: 6rem;
+    height: 2rem;
+    background-color: var(--main-color);
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.warning{
+    background-color: #ef8a8a;
+    margin: auto;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    font-weight: bold;
+    border-radius: 2px;
+}
+
+.disable{
+    display: none;
+}
+@media screen and (min-width:100px) and (max-width:618px)  {
+
+    .algoBar{
+        position: relative;
+        display: flex;
+        align-items: center;
+        color: white;
+        font-size: small;
+        font-weight: 400;
+        letter-spacing: 0px;
+        
+    }
+
+    .algoBar:hover{
+        color: var(--second-color);
+    }
+
+    .algoBar:hover .arrow{
+        border-color: var(--second-color) transparent transparent transparent; 
+    }
+
+    .algoBar:hover .all-algos{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .all-algos{
+        position: absolute;
+        top: 20px;
+        background-color: var(--main-color);
+        padding: 10px;
+        left: inherit;
+        display: none;
+    }
+    .all-algos li{
+        padding: 0.5rem;
+        border-radius: 2px;
+    }
+
+    .menu{
+        width: 100px;
+        left: 0;
+    }
+
+.btn{
+    font-size: small;
+}
+    .controls{
+        font-size: small;
+        font-weight: 400;
+    }
+
+    .submitBtn{
+        border: 2px solid var(--myWhite);
+        width: 3rem;
+        background-color: #10b186;
+        margin-right: 0.3rem;
+    }
+}
+
+@media (min-width:619px) and (max-width:1000px){
+    
+    .algoBar .algoDiv{
+        display: none;
+    }
+    
+}
+@media (min-width:1000px) and (max-width:1499px) {
+
+    .algoBar .algoDiv{
+        display: none;
+    }
+}
+@media (min-width:1500px) {
+
+    .algoBar .algoDiv{
+        display: none;
+    }
+}
