@@ -9,12 +9,11 @@ addBtn.onclick = function () {
     input.focus();
 }
 const timer = (ms) => new Promise((res) => setTimeout(res, ms));
-export let checking = async function (left,right,array) {
-    
-    array[left].style.borderLeft="solid 5px yellow";
-    array[right].style.borderRight = "solid 5px yellow";
-    
-
+export let checking = async function (left,right,array,type) {
+    if(type=="binary"){
+        array[left].style.borderLeft="solid 5px yellow";
+        array[right].style.borderRight = "solid 5px yellow";
+    }
     for (let i = left; i <= right; i++){
         array[i].style.backgroundColor="#10b186";
         array[i].style.transform = 'scale(1.1)';
@@ -27,7 +26,7 @@ export let checking = async function (left,right,array) {
 }
 
 export let success = function (left,right,array) {
-    checking(left,right,array);
+    checking(left,right,array,"linear");
     array[left].style.outline = '3px solid yellow';
     array[left].style.border = 'none';
 }

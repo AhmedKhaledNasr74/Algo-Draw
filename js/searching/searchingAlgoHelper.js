@@ -31,6 +31,7 @@ export let resetArr = async function () {
         element.style.filter="blur(0px)"
         element.style.textDecoration="none";
     });
+    customeAlert.classList.add("disable");
     
 }
 

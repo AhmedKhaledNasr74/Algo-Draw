@@ -11,6 +11,13 @@ let items = document.querySelector(".items");
 let inputArr = document.querySelector(".inputArr");
 let warning = document.querySelector(".warning");
 let choosenAlgo = document.querySelectorAll(".algo");
+let key = document.querySelector(".key");
+let s = document.querySelector(".submitBtn").disapled=true;
+if(key.value.length==0){
+    
+}
+console.log(key.value.length);
+
 choosenAlgo.forEach((child) => {
     child.onclick = function () {
         choosenAlgo.forEach((algo) => {
@@ -21,6 +28,7 @@ choosenAlgo.forEach((child) => {
 });
 
 submitInput.onclick = function () {
+    resetArr();
     if (!checkInput(input.value)) {
         items.innerHTML = "";
         let numbers = input.value.split(",");
@@ -45,7 +53,7 @@ let linearSearch = async function () {
     await timer(500);
     let array = document.querySelectorAll(".item");
     for (let i=0;i<array.length;i++) {
-        await checking(i,i,array);
+        await checking(i,i,array,"linear");
         if (array[i].innerHTML == key) {
             flag = 1;
             success(i,i,array);
@@ -76,7 +84,7 @@ let binarySearch = async function () {
     let key = document.querySelector(".key").value;
     let left = 0,right = array.length - 1,middle;
     while (left <= right) {
-        await checking(left,right,array);
+        await checking(left,right,array,"binary");
         await reset(left,right,array);
         middle = Math.floor((left + right) / 2);
         if (+array[middle].innerHTML < +key) {
@@ -117,14 +125,18 @@ let outOfSearch = async function (left,right,array) {
 submitBtn.onclick = async function () {
     resetArr();
     let flag = 0;
-    for (const child of choosenAlgo) {
-        if (child.classList.contains("active")) {
-            if (child.classList.contains("linear")) flag = await linearSearch();
-            else flag = await binarySearch();
+    if(key.value.length!=0){
+        for (const child of choosenAlgo) {
+            if (child.classList.contains("active")) {
+                if (child.classList.contains("linear"))flag = await linearSearch();
+                else flag = await binarySearch();
+            }
         }
+        if (!flag) customeAlert.classList.remove("disable");
     }
+    else window.alert("please enter number");
     
-    if (!flag) customeAlert.classList.remove("disable");
+    
 };
 
 
