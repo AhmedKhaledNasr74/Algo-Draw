@@ -11,12 +11,6 @@ let items = document.querySelector(".items");
 let inputArr = document.querySelector(".inputArr");
 let warning = document.querySelector(".warning");
 let choosenAlgo = document.querySelectorAll(".algo");
-let key = document.querySelector(".key");
-let s = document.querySelector(".submitBtn").disapled=true;
-if(key.value.length==0){
-    
-}
-console.log(key.value.length);
 
 choosenAlgo.forEach((child) => {
     child.onclick = function () {
