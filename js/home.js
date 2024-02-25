@@ -12,5 +12,5 @@ searching.onclick = function () {
 }
 
 bitmasks.onclick = function () {
-    window.location.href = "searching.html";
+    window.location.href = "#";
 }

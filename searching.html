@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css"/>
     <title>Algo Draw | ComingSoon</title>
 </head>
 <style>
@@ -11,18 +12,131 @@
             left: 50%;
             top: 50%;   
             transform: translate(-50%,-50%);
-            font-size: 80px;
-            font-weight: 900;
-            color: white;   
+            color: white;  
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
         }
         body{
             background-color: #1d1d1d;
         }
+
+        .items{
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            width: 80vw;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .items li{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 6%;
+            height: 75px;
+            font-size: 200%;
+            margin: 5px;
+            background-color: #65bbca;
+        }
+        .key{
+            outline: none;
+        }
+
+        .alert{
+            width: 100%;
+            text-align: center;
+            font-size: 200%;
+            color: red;
+            font-weight: bolder;
+        }
+
+
     </style>
 <body>
-    
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">Algo Draw</a>   
+            <div>
+                <div class="algoBar">
+                    <div class="algoDiv" >
+                        <div>Algorithms</div>
+                        <span></span>
+                    </div>
+                    <ul class="all-algos">
+                        <li class="linear algo active">linear</li>
+                        <li class="binary algo">binary</li>
+                    </ul>
+                </div>
+                
+                
+            </div>
+            
+            <div class="controls">
+                <div class="aa">
+                    <div class="name">Controls</div>
+                    <span class="arrow"></span>
+                </div>
+                
+                
+                <ul class="menu">
+                    <li><input type="number" class="key"></li>
+                    <li><button class="random btn">Random Array</button></li>
+                    <li><button class="addBtn btn">Enter an Array</button></li>
+                    <div>Speed</div>
+                    <input type="range" class="range speed" min="1" max="780" id="speed" value="10">
+                </ul>
+            </div>
+            <div>
+                <button class="submitBtn btn">Run</button>
+            </div>
+            
+        </div>
+    </header>
     <div class="comingSoon">
-        Coming Soon!!
+        <div class="array">
+            <ul class="items">
+                <li class="item">1</li>
+                <li class="item">2</li>
+                <li class="item">3</li>
+                <li class="item">4</li>
+                <li class="item">5</li>
+                <li class="item">6</li>
+                <li class="item">7</li>
+                <li class="item">8</li>
+                <li class="item">9</li>
+                <li class="item">10</li>
+                <li class="item">11</li>
+                <li class="item">12</li>
+                <li class="item">13</li>
+                <li class="item">14</li>
+                <li class="item">15</li>
+                <li class="item">16</li>
+                <li class="item">17</li>
+                <li class="item">18</li>
+                <li class="item">19</li>
+                <li class="item">20</li>
+            </ul>
+        </div>
+        <div class="alert disable">Key not found
+        </div>
     </div>
+    
+    <div class="inputArr disable">
+        <div class="main">
+            <div class="warning disable"></div>
+            <textarea class="input"></textarea>
+            <button class="submitInput">Add</button>
+        </div>
+        
+    </div>
+    <script type="module" src="js/searching/search.js"></script>
+    <script type="module" src="js/searching/handleInput.js"></script>
+    <script type="module" src="js/searching/domChanger.js"></script>
+    <script type="module" src="js/searching/searchingAlgoHelper.js"></script>
+
 </body>
 </html>

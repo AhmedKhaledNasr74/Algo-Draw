@@ -7,14 +7,13 @@ let choosenAlgo = document.querySelectorAll(".algo");
 export let numbers = [];
 export let arrContainer = document.querySelector(".arr");
 let submitBtn = document.querySelector(".submitBtn");
-let addBtn = document.querySelector(".addBtn");
-let inputArr = document.querySelector(".inputArr");
-let input = document.querySelector(".input");
 let submitInput = document.querySelector(".submitInput");
-let warning = document.querySelector(".warning");
 let randomBtn = document.querySelector(".random");
 let algorithms = document.querySelectorAll(".algo");
-
+let inputArr = document.querySelector(".inputArr");
+let input = document.querySelector(".input");
+let addBtn = document.querySelector(".addBtn")
+let warning = document.querySelector(".warning");
 export let runFlag=0;
 
 
@@ -87,17 +86,21 @@ submitBtn.onclick = function () {
 
 }
 
-input.addEventListener("keypress",function (event){
-    if(event.keyCode==13)
-        submitInput.click();
-})
-
-addBtn.onclick = function () {
-    inputArr.classList.remove("disable");
-    input.focus();
+submitInput.onclick = function (){
+    let counter=input.value;
+    let flag = checkInput(counter);
+    if(flag==0){
+        input.value="";
+        arrContainer.innerHTML="";
+        displayArr();
+        runFlag=0;
+        inputArr.classList.add("disable");
+        warning.classList.add("disable");
+    }
 }
 
-let checkInput = function (input) {
+
+export let checkInput = function (input) {
     let flag=0;
     for(let i=0;i<input.length;i++){
             if(isNaN(parseInt(input[i]))&&input[i]!=","){
@@ -107,12 +110,12 @@ let checkInput = function (input) {
                 break;
             }
         }
-        numbers="";
-        numbers=input.split(",");
+        modifyNumbers("")
+        modifyNumbers(input.split(","));
         numbers.forEach(num=>{
-            if(num>99999){
+            if(num>9999){
                 warning.classList.remove("disable");
-                warning.innerHTML="you can enter a number <= 99999 only";
+                warning.innerHTML="you can enter a number <= 9999 only";
                 flag=1;
             }
         });
@@ -125,16 +128,13 @@ let checkInput = function (input) {
     return flag;
 }
 
-submitInput.onclick = function () {
-    let counter=input.value;
-    let flag = checkInput(counter);
-    if(flag==0){
-        input.value="";
-        arrContainer.innerHTML="";
-        displayArr(1);
-        runFlag=0;
-        inputArr.classList.add("disable");
-        warning.classList.add("disable");
-    }
-    
+input.addEventListener("keypress",function (event){
+    if(event.keyCode==13)
+        submitInput.click();
+})
+
+addBtn.onclick = function () {
+    inputArr.classList.remove("disable");
+    input.focus();
 }
+

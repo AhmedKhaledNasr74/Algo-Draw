@@ -26,8 +26,8 @@ export let progress = function (i,check) {
         }
         
         if(bar.getAttribute("order")==i&&check==0){
-            bars[i].setAttribute("order",i+1);
             bars[i+1].setAttribute("order",i);
+            bars[i].setAttribute("order",i+1);
             bar.parentElement.insertBefore(bars[i+1],bars[i]);
         }
     })
@@ -42,7 +42,11 @@ export let done = function (i) {
     })
 }
 
+
 export let displayArr = function () {
+    if (!arrContainer) {
+        return;
+    }
     arrContainer.innerHTML="";
     let casee;
     numbers.length<=20?casee=1:casee=2;

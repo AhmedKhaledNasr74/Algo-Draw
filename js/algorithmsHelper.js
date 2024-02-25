@@ -22,7 +22,7 @@ Input[1].oninput = function () {
 }
 
 export function getSpeed(){
-    return (350-Input[1].value);
+    return (800-Input[1].value);
 }
 
 Input[0].oninput = function () {

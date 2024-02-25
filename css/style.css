@@ -193,7 +193,7 @@ input[type="range"]{
 
 .main-algo{
     
-    height: 43rem;
+    height: 42rem;
     padding: 1.5px;
     display: flex;
 }
@@ -264,6 +264,10 @@ input[type="range"]{
 
 .disable{
     display: none;
+}
+
+.logo{
+    text-decoration: none;
 }
 @media screen and (min-width:100px) and (max-width:618px)  {
 
